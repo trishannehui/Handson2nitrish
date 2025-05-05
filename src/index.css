@@ -1,0 +1,164 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.9)),
+    url(../public/backgrounds/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #f8f8f8;
+}
+
+h1,
+h2 {
+  color: #fdfdfd;
+  text-align: center;
+}
+
+.container {
+  max-width: 640px;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid rgba(200, 200, 200, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: rgb(148, 50, 50);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(77, 92, 52);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 600px) {
+  .form {
+    gap: 0.75rem;
+  }
+
+  input,
+  button {
+    width: 100%;
+  }
+
+  .user-table thead {
+    display: none;
+  }
+
+  .user-table tr {
+    display: block;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .user-table td {
+    display: block;
+    text-align: right;
+    padding: 0.5rem;
+    position: relative;
+  }
+
+  .user-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-align: left;
+  }
+
+  .spinner-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .loader {
+    text-align: center;
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+.spinner-image {
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #f06292;
+}
+
+
+
